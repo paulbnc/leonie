@@ -40,3 +40,10 @@ body {
   box-shadow: none;
   transform: translate(6px, 6px);
 }
+
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
