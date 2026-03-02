@@ -8,6 +8,14 @@ export function renderIntro() {
 
   const button = document.querySelector(".welcome_button");
   button.addEventListener("click", () => {
-    alert("Première étape...");
+    
+        const box = document.createElement("div");
+        box.classList.add("stage_box");
+        box.textContent = "Première étape...";
+
+        const app = document.getElementById("app");
+        app.appendChild(box);
+
+        button.disabled = true; // évite double clic
   });
 }
