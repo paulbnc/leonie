@@ -1,3 +1,5 @@
+import { setScreen } from "../main.js";
+
 export function renderIntro() {
   const app = document.getElementById("app");
 
@@ -7,15 +9,26 @@ export function renderIntro() {
   `;
 
   const button = document.querySelector(".welcome_button");
-  button.addEventListener("click", () => {
-    
-        const box = document.createElement("div");
-        box.classList.add("stage_box");
-        box.textContent = "Première étape...";
+  button.addEventListener("click", showStageTransition);
+}
 
-        const app = document.getElementById("app");
-        app.appendChild(box);
+function showStageTransition() {
+  const app = document.getElementById("app");
 
-        button.disabled = true; // évite double clic
-  });
+  app.innerHTML = `
+    <div class="first-space"></div>
+    <div class="stage_box fade-in">Première étape...</div>
+  `;
+
+  const stageBox = document.querySelector(".stage_box");
+
+  setTimeout(() => {
+    stageBox.classList.remove("fade-in");
+    stageBox.classList.add("fade-out");
+
+    stageBox.addEventListener("animationend", () => {
+      setScreen("pairs");
+    }, { once: true });
+
+  }, 2000);
 }
