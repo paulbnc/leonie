@@ -1,0 +1,73 @@
+leonie/
+│
+├── index.html
+│
+├── assets/
+│   ├── images/
+│   │   ├── characters/
+│   │   │   ├── leonie.png
+│   │   │   ├── paul.png
+│   │   │   ├── bridgerton_man.png
+│   │   │   ├── bridgerton_woman.png
+│   │   │   ├── shane.png
+│   │   │   ├── ilya.png
+│   │   │
+│   │   ├── snake/
+│   │   │   ├── leonie_head.png
+│   │   │   ├── paul_food.png
+│   │   │
+│   │   ├── ui/
+│   │   │   ├── heart.png
+│   │   │   ├── background.jpg
+│   │
+│   ├── audio/
+│   │   ├── background_music.mp3
+│
+├── styles/
+│   ├── base.css
+│   ├── layout.css
+│   ├── animations.css
+│   ├── pairs.css
+│   ├── reflex.css
+│   ├── snake.css
+│   ├── reward.css
+│   ├── fonts/
+│   │   ├── dtm-sans.ttf
+│
+├── js/
+│   ├── main.js
+│   ├── state/
+│   │   ├── gameState.js
+│   │
+│   ├── utils/
+│   │   ├── dom.js
+│   │   ├── random.js
+│   │   ├── collision.js
+│   │
+│   ├── screens/
+│   │   ├── introScreen.js
+│   │   ├── pairsScreen.js
+│   │   ├── reflexScreen.js
+│   │   ├── snakeScreen.js
+│   │   ├── rewardScreen.js
+│   │
+│   ├── components/
+│   │   ├── button.js
+│   │   ├── modal.js
+│   │   ├── messageWriter.js
+│   │
+│   ├── games/
+│   │   ├── pairs/
+│   │   │   ├── pairsEngine.js
+│   │   │   ├── pairsData.js
+│   │   │
+│   │   ├── reflex/
+│   │   │   ├── reflexEngine.js
+│   │   │
+│   │   ├── snake/
+│   │   │   ├── snakeEngine.js
+│   │   │   ├── snakeRenderer.js
+│   │   │   ├── snakeController.js
+│   │
+│   ├── reward/
+│   │   ├── tulipAnimation.js

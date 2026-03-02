@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "DTM";
+  src: url("fonts/dtm-sans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ca9910;
+  color: #fafafa;
+  font-family: "DTM", sans-serif;
+  min-height: 100vh;
+}
+
+.first-space {
+  margin: 130px 0;
+}
+
+/* From Uiverse.io by levxyca */ 
+.welcome_button {
+  font-size: 3rem;
+  font-family: inherit;
+  color: #ce0249;
+  text-transform: uppercase;
+  padding: 20px 40px;
+  border-radius: 10px;
+  border: 4px solid #ce0249;
+  background: #ca9910;
+  box-shadow: 6px 6px #ce0249;
+  cursor: pointer;
+  margin: 70px 0;
+}
+
+.welcome_button:active {
+  box-shadow: none;
+  transform: translate(6px, 6px);
+}
