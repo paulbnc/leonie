@@ -1,5 +1,6 @@
 import { renderIntro } from "./screens/introScreen.js";
 import { renderPairs } from "./screens/pairsScreen.js";
+import { renderReflex } from "./screens/reflexScreen.js";
 
 let screen = "intro";
 
@@ -11,7 +12,8 @@ export function setScreen(newScreen) {
 function render() {
   if (screen === "intro") renderIntro();
   if (screen === "pairs") renderPairs();
-  if (screen === "reflex") console.log("à suivre...");
+  if (screen === "reflex") renderReflex();
+  if (screen === "snake") console.log("à suivre...");
 }
 
 render();

@@ -12,7 +12,7 @@ export function renderPairs() {
 
   const couples = [
     ["leonie", "paul"],
-    ["shane", "ilya"],
+    /*["shane", "ilya"],
     ["simon", "daphne"],
     ["bella", "edward"],
     ["frida", "diego"],
@@ -28,8 +28,7 @@ export function renderPairs() {
     ["oberyn", "ellaria"],
     ["romeo", "juliette"],
     ["tlou1", "tlou2"],
-    ["morticia", "morticia_husband"]
-    // Ajoute ici d'autres couples si besoin
+    ["morticia", "morticia_husband"]*/
   ];
 
   // Génère une liste de noms à partir des couples, en doublant chaque nom
