@@ -10,26 +10,64 @@ export function renderPairs() {
 
   const container = document.querySelector(".pairs-container");
 
-  const colors = [
-    "crimson", "crimson",
-    "royalblue", "royalblue",
-    "seagreen", "seagreen"
+  const couples = [
+    ["leonie", "paul"],
+    ["shane", "ilya"],
+    ["simon", "daphne"],
+    ["bella", "edward"],
+    ["frida", "diego"],
+    ["tristan", "yseut"],
+    ["willow", "tara"],
+    ["nick", "charlie"],
+    ["bonnie", "clyde"],
+    ["leia", "solo"],
+    ["mickey", "mini"],
+    ["fiona", "shrek"],
+    ["peach", "mario"],
+    ["jayz", "beyonce"],
+    ["oberyn", "ellaria"],
+    ["romeo", "juliette"],
+    ["tlou1", "tlou2"],
+    ["morticia", "morticia_husband"]
+    // Ajoute ici d'autres couples si besoin
   ];
 
-  colors.sort(() => Math.random() - 0.5);
+  // Génère une liste de noms à partir des couples, en doublant chaque nom
+  let names = [];
+  couples.forEach(couple => {
+    names.push(couple[0], couple[1]);
+  });
+
+  // Mélange les noms aléatoirement
+  names.sort(() => Math.random() - 0.5);
+
+  // Associe une couleur unique à chaque couple
+  const coupleColors = {};
+  const colors = ["crimson", "royalblue", "seagreen", "darkorange", "indigo", "darkviolet"];
+  couples.forEach((couple, index) => {
+    coupleColors[couple[0]] = colors[index % colors.length];
+    coupleColors[couple[1]] = colors[index % colors.length];
+  });
 
   let firstSelected = null;
   let lock = false;
   let matches = 0;
 
-  colors.forEach(color => {
+  names.forEach(name => {
     const circle = document.createElement("div");
     circle.classList.add("pair-circle");
-    circle.style.background = color;
-    circle.dataset.color = color;
+    circle.style.background = coupleColors[name];
+    circle.dataset.name = name;
+    circle.dataset.couple = couples.find(c => c.includes(name))[0] + couples.find(c => c.includes(name))[1];
+
+    const img = document.createElement("img");
+    img.src = `../assets/images/characters/${name}.png`;
+    img.alt = name;
+    img.classList.add("circle-img");
+
+    circle.appendChild(img);
 
     circle.addEventListener("click", () => {
-
       if (lock) return;
       if (circle.classList.contains("matched")) return;
 
@@ -38,9 +76,11 @@ export function renderPairs() {
       if (!firstSelected) {
         firstSelected = circle;
       } else {
+        const firstName = firstSelected.dataset.name;
+        const secondName = circle.dataset.name;
+        const isCouple = couples.some(c => c.includes(firstName) && c.includes(secondName));
 
-        if (firstSelected.dataset.color === circle.dataset.color) {
-
+        if (isCouple) {
           firstSelected.classList.remove("selected");
           circle.classList.remove("selected");
 
@@ -50,14 +90,12 @@ export function renderPairs() {
           matches++;
           firstSelected = null;
 
-          if (matches === 3) {
+          if (matches === couples.length) {
             setTimeout(() => {
               setScreen("reflex");
             }, 800);
           }
-
         } else {
-
           lock = true;
           setTimeout(() => {
             firstSelected.classList.remove("selected");
@@ -65,7 +103,6 @@ export function renderPairs() {
             firstSelected = null;
             lock = false;
           }, 600);
-
         }
       }
     });
