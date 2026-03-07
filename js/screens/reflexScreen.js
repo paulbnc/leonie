@@ -148,7 +148,6 @@ function startReflexGame(app) {
     if (won) {
       overlayContent.innerHTML = `
         <div class="overlay-win">
-          <div class="overlay-emoji">🎉</div>
           <div class="overlay-title">Bravo !</div>
           <div class="overlay-subtitle">Tu as attrapé ${HEARTS_TO_WIN} coeurs !</div>
         </div>
@@ -157,7 +156,6 @@ function startReflexGame(app) {
     } else {
       overlayContent.innerHTML = `
         <div class="overlay-lose">
-          <div class="overlay-emoji">💔</div>
           <div class="overlay-title">Perdu !</div>
           <div class="overlay-subtitle">Trop de coeurs brisés...</div>
           <button class="retry-btn" id="retry-btn">Réessayer</button>
