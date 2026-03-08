@@ -60,7 +60,7 @@ export function renderPairs() {
     circle.dataset.couple = couples.find(c => c.includes(name))[0] + couples.find(c => c.includes(name))[1];
 
     const img = document.createElement("img");
-    img.src = `../assets/images/characters/${name}.png`;
+    img.src = `assets/images/characters/${name}.png`;
     img.alt = name;
     img.classList.add("circle-img");
 

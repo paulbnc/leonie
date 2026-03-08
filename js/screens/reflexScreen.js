@@ -75,8 +75,8 @@ function startReflexGame(app) {
     const isBroken = Math.random() < 0.4; // 30% chance d'un coeur brisé
     const img = document.createElement("img");
     img.src = isBroken
-      ? `../assets/images/reflex/broken_heart.png`
-      : `../assets/images/reflex/heart.png`;
+      ? `assets/images/reflex/broken_heart.png`
+      : `assets/images/reflex/heart.png`;
     img.className = "reflex-heart" + (isBroken ? " broken" : "");
 
     // Position aléatoire dans l'arène
