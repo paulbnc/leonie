@@ -23,7 +23,7 @@ function startSnakeGame(app) {
   const COLS = 15;
   const ROWS = 15;
   const CANVAS_SIZE = GRID * COLS;
-  const FOOD_TO_WIN = 10;
+  const FOOD_TO_WIN = 6;
   const SPEED = 7;
 
   app.innerHTML = `
