@@ -60,7 +60,7 @@ function startSnakeGame(app) {
   foodImg.src = "assets/images/characters/paul.png";
 
   let snake = {
-    x: Math.floor(COLS / 2) * GRID,
+    x: 0,//Math.floor(COLS / 2) * GRID,
     y: Math.floor(ROWS / 2) * GRID,
     dx: GRID,
     dy: 0,
@@ -108,7 +108,7 @@ function startSnakeGame(app) {
     overlayContent.innerHTML = `
       <div class="overlay-lose">
         <div class="overlay-title">Perdu !</div>
-        <div class="overlay-subtitle">Le snake s'est mordu...</div>
+        <div class="overlay-subtitle">Léonie s'est mordue...</div>
         <button class="retry-btn" id="snake-retry-btn">Réessayer</button>
       </div>
     `;
